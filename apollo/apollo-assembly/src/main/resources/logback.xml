@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<include resource="org/springframework/boot/logging/logback/defaults.xml" />
+	<property name="LOG_FILE"
+		value="${LOG_FILE:-${LOG_PATH:-${LOG_TEMP:-${java.io.tmpdir:-/tmp}}/}apollo-assembly.log}" />
+	<include resource="org/springframework/boot/logging/logback/file-appender.xml" />
+	<include resource="org/springframework/boot/logging/logback/console-appender.xml" />
+	<root level="INFO">
+		<if condition='isDefined("LOG_APPENDERS")'>
+			<then>
+				<if condition='property("LOG_APPENDERS").contains("CONSOLE")'>
+					<then>
+						<appender-ref ref="CONSOLE"/>
+					</then>
+				</if>
+				<if condition='property("LOG_APPENDERS").contains("FILE")'>
+					<then>
+						<appender-ref ref="FILE"/>
+					</then>
+				</if>
+			</then>
+			<else>
+				<appender-ref ref="FILE" />
+				<appender-ref ref="CONSOLE" />
+			</else>
+		</if>
+	</root>
+</configuration>
