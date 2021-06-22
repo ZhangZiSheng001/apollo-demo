@@ -8,11 +8,11 @@ ctrip:
   appid: 100003171
 
 server:
-  port: 8080
+  port: 8081
 
 logging:
   file:
-    name: /opt/logs/100003171/apollo-configservice.log
+    name: /tmp/logs/100003171/apollo-configservice.log
 
 eureka:
   instance:

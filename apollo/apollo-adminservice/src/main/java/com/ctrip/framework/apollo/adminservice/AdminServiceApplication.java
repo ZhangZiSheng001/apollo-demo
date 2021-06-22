@@ -12,7 +12,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableAspectJAutoProxy
 @Configuration
-@PropertySource(value = {"classpath:adminservice.properties"})
+// @PropertySource(value = {"classpath:adminservice.properties"})
 @EnableAutoConfiguration
 @EnableTransactionManagement
 @ComponentScan(basePackageClasses = {ApolloCommonConfig.class,

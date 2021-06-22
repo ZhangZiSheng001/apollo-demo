@@ -22,7 +22,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableAutoConfiguration
 @Configuration
 @EnableTransactionManagement
-@PropertySource(value = {"classpath:configservice.properties"})
+// @PropertySource(value = {"classpath:configservice.properties"})
 @ComponentScan(basePackageClasses = {ApolloCommonConfig.class,
     ApolloBizConfig.class,
     ConfigServiceApplication.class,
